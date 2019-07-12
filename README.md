@@ -39,7 +39,6 @@ Belows are some keypoints that I learned from creating this screamy app:
 * We use **"axios"** and **redux-thunk** to write async action creator for url request.
 * We use object instead of string to store the data for the state inside Redux store. WHY? Because object is much easier to add, edit     ... compared to string. Also remember, a new created object must be returned.
 * nums.map(num => ()) is just like for num in nums: in Python
-* `you_id_is${id}` is ES2015 syntax for create a new string using know variable id.
 * We use action creators to create/edit/delete streams where according requests are sent to api server, then, we use different kinds of   reducer to update the state inside the Redux store
 * We need ot add userID for every stream being created. HOW? Inside the createStream action creator, since we are using redux-thunk       middleware, the function automatically being passed with the state inside the redux store which contains the userID in the auth step     before.
 * JSX: <div style = {{textAlign: 'right'}}>XXX</div> is to make XXX appears on the right side of the screen. the first {} is to indicate   that we want to refer to a JS variable, the second {} is to indicate a normal object.
