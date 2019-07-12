@@ -8,4 +8,12 @@ The challenges of this app:
 4. Need to master CRUD (Create Read Update Destroy) operations in React/Redux.
 
 Belows are some keypoints that I learned from creating this screamy app:
-* `react-router-dom` allows negivations between webpages. Compared to tranditional link tag <a herf = ""></a> which is bad for our react/redux app because using these link tags will dump the old HTML and loss all data and variables, `react-router-dom` will prevent the brower to fetch a new HTML file.
+* **react-router-dom** allows negivations between webpages. Compared to tranditional link tag <a herf = ""></a> which is bad for our react/redux app because using these link tags will dump the old HTML and loss all data and variables, **react-router-dom** will prevent the brower to fetch a new HTML file.
+* The true nature of **react-router-dom** is to show and hide differernt sets of components based upon the URL.
+* We can use **semantic ui cdn** to handle the styling for our app.
+* If we want to add some always visible header, we should add it outside the <BrowerRouter> import from **react-router-dom**.
+  However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the <div></div> under the <BrowerRouter>.
+* As for the authetication, I used Google OAuth which can not only capable of identifiation but can also make actions on behalf of users.
+* API - Application programming Interface can served as the waiters or messages among different software systems.
+* For OAuth, there are OAuth for severs -> actively access the users date for like each 10 mins and OAuth for JS Brower Apps which just handle the login process.
+
