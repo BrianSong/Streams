@@ -23,5 +23,23 @@ Belows are some keypoints that I learned from creating this screamy app:
 * Inside .isSignedIn.listen(), we can pass a callback function which will be called everytime the isSignIn property changes.
 * We must combine **Redux Store** inside the authetication component, so, in this way, not only the GoogleAuth component knows the authetication states, but also all other components.
 * Once the user successfully sigin or signout, the action creator inside the .isSignedIn.listen()'s callback function will be called, then the actions will be dispatched and the state inside Redux stroe will be changed, and all other components can know the user's status.
-* mapStateToProps is used if 
-
+* mapStateToProps is used if we need to get access to the state properties inside the Redux store inside any components.
+* The format for state inside Redux store is state.auth(property come from auth reducer).isSignedIn(key).
+* How to call action creators inside a component => connect(mapStateToProps, {action_creator})(component), then we can call this.props.action_creator.
+* As long as we pass mapStateToProps inside a component, once the states inside Redux store is changed, this component will automatically rerender itself.
+* After using gapi.auth2.getAuthInstance().currentUser.get().getId() to get userID, we can use this userID to pass it to action creator as props and we can assign this userID to action.payload.
+* **redux-devtools-extension** can debug and check Redux stroe at any time.
+* localhost:3000?debug-sesstion=<some_string> can open the debug mode where the data will lose between refresh the pages. We can name the "same_string" specifically so that we can have the ability to create check points.
+* **Redux Form** can do two things for us automatically: 1. change state in Redux store by calling the action creater(then dispatch to reducer to change states) 2. Pass the changed state back to components by calling mapStateToProps.
+* Inside "import {Field, reduxForm} from 'redux-form'", the reduxForm just like connect for react-redux.
+* Validation of form inputs: if validate(formValues) return null means all good, if it returns key-value pair, then it means that the Redux form will show the error. The key should be matched with the <Field> name property.
+* If we see the **error**: Cannot read "XXX" of undefined, it is quite like the issues related to "this", change the callback function into arrow function.
+* The API server we used inside this app is the **JSON server** which adheres to the REST conventions.
+* db.json serves as knid of backend database, and we can make GET, POST, PUT, DELETE request to it.
+* We use **"axios"** and **redux-thunk** to write async action creator for url request.
+* We use object instead of string to store the data for the state inside Redux store. WHY? Because object is much easier to add, edit ... compared to string. Also remember, a new created object must be returned.
+* nums.map(num => ()) is just like for num in nums: in Python
+* `you_id_is${id}` is ES2015 syntax for create a new string using know variable id.
+* We use action creators to create/edit/delete streams where according requests are sent to api server, then, we use different kinds of reducer to update the state inside the Redux store
+* We need ot add userID for every stream being created. HOW? Inside the createStream action creator, since we are using redux-thunk middleware, the function automatically being passed with the state inside the redux store which contains the userID in the auth step before.
+* JSX: <div style = {{textAlign: 'right'}}>XXX</div> is to make XXX appears on the right side of the screen. the first {} is to indicate that we want to refer to a JS variable, the second {} is to indicate a normal object.
