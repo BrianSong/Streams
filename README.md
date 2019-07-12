@@ -43,3 +43,31 @@ Belows are some keypoints that I learned from creating this screamy app:
 * We use action creators to create/edit/delete streams where according requests are sent to api server, then, we use different kinds of   reducer to update the state inside the Redux store
 * We need ot add userID for every stream being created. HOW? Inside the createStream action creator, since we are using redux-thunk       middleware, the function automatically being passed with the state inside the redux store which contains the userID in the auth step     before.
 * JSX: <div style = {{textAlign: 'right'}}>XXX</div> is to make XXX appears on the right side of the screen. the first {} is to indicate   that we want to refer to a JS variable, the second {} is to indicate a normal object.
+* There are two kind of navigation: Intentional (<link>) and programmatic (run code to forcily navigate the user through the app).
+* We should navigate the user after the backend API responces with success or error.
+* In order to implement programmatic navigation, we use the **history** object created by the BrowerRouter. However, eventhough this       history object is easy to be refered inside the <BrowerRouter> since it is passed to it as a prop, it is hard to reference inside the   action creators. So, we do not use BrowerRouter to create the history object, we will create it by our own using the plain Router.
+  Then, we can use the history.push('') to do the programmatic navigation.
+* **URL-based selection**: inside/edit/:id, : means id is a variable, and it will be passed into the props.match.params of the page       component due to the <Route> system.
+* The **ownProps** passed in argument inside the mapStateToProps can be called in order to get access to the props inside the components   as long as the connect() connect the mapStateToProps with the component.
+* With React-Router, each component needs to be designed to **work in isolation**, which means to have the ability to fetch its own data   inside each component.
+* For function react components, use "props"; for class-based react components, use "this.props".
+* As long as the state inside the Redux store update, the class-based component wiwll be rerendered as long as it is connected by         connect().
+* After import _ from 'lodash', _.pick{someobject, key} can return a specific key-value pair object.
+* formValues is all the form information inside Redux form, it can be automatically pass into the onSubmit callback function inside the   <form> in Redux form.
+* Since **PUT** request will update all properties, we use **PATCH** which update only some properties instead.
+* **Modal window**: higher **z-index** means higher priority to be showed in the top of the screen. It is very hard for us to use modal 
+  window directly inside the normal react system because in that case, the modal window will be deeply nested inside all levels of         <div>, and it is very hard ot set appropriate z-index for all of them for letting the modal window show on the toppest of the screen.
+  So, we use **portal** because it lets us to render some element not as a direct child, in this way, we can kind of break through the
+  nested system and let modal window be a child of the body and assgin a very high z-index to it.
+* Use portal for modal window: ReactDOM.createPortal + document.querySelector(#(under the root in index.html))
+* EventHandler has a bubble up property, a e.stopPropagation() can be used to stop it.
+* We cannot allow to assign multiple JSX elements into a single variable, so we must use <div></div> to wrap them up.
+* We should use onClick = {()=>{some_call_back_func}} instead of onClick = {some_call_back_func}, because without the ()=> arrow 
+  function, this callback function will be called automatically for the first time.
+* Use <switch></switch> to only show one Route at a time.
+* To make the app works, we need all three (npm app + api + RTMP server) on.
+* **flv.js** wil make the video player inside our app.
+* By the set the setting(URL and STREAM-NAME) inside **OBS (open broadcaster software)**, we can pass the stream into the **RTMP**
+  server.
+* **componentWillUnmount()** will take care of the cleanup process: as long as we navigate away from the streamShow component, the flv
+  player is destoried by it.
