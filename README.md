@@ -21,5 +21,7 @@ Belows are some keypoints that I learned from creating this screamy app:
 * Since the previous loading needs time, so, we can add a callback funtion after the loading process to init the gapi client: gpai.client.init({clientId:..., scope(indicates which parts of the user profile we need to get access to):'email'})
 * However, the previous init process is not sync as well, so we add ".then(() = > {this.auth = windows.gapi.auth2.getAuthInstance()})" to get a return object this.auth which can call several functions: .signIn(), .isSignedInget(), .signOut(), .isSignedIn.listen().
 * Inside .isSignedIn.listen(), we can pass a callback function which will be called everytime the isSignIn property changes.
-* We must combine **Redux Store** inside the authetication component, so, in this way, not only the GoogleAuth component knows the states, all other components know.
+* We must combine **Redux Store** inside the authetication component, so, in this way, not only the GoogleAuth component knows the authetication states, but also all other components.
+* Once the user successfully sigin or signout, the action creator inside the .isSignedIn.listen()'s callback function will be called, then the actions will be dispatched and the state inside Redux stroe will be changed, and all other components can know the user's status.
+* mapStateToProps is used if 
 
