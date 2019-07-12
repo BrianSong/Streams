@@ -13,7 +13,7 @@ Belows are some keypoints that I learned from creating this screamy app:
 * We can use **semantic ui cdn** to handle the styling for our app.
 * If we want to add some always visible header, we should add it outside the <BrowerRouter> import from **react-router-dom**.
   However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the <div></div> under the <BrowerRouter>.
-* As for the authetication, I used Google OAuth which can not only capable of identifiation but can also make actions on behalf of users.
+* As for the authetication, I used **Google OAuth** which can not only capable of identifiation but can also make actions on behalf of users.
 * API - Application programming Interface can served as the waiters or messages among different software systems.
 * For OAuth, there are OAuth for severs -> actively access the users date for like each 10 mins and OAuth for JS Brower Apps which just handle the login process.
 
