@@ -7,3 +7,5 @@ The challenges of this app:
 3. Need to handle forms in Redux.
 4. Need to master CRUD (Create Read Update Destroy) operations in React/Redux.
 
+Belows are some keypoints that I learned from creating this screams app:
+* `react-router-dom` allows negivations between webpages. Compared to tranditional link tag <a herf = ""></a> which is bad for our react/redux app because using these link tags will dump the old HTML and loss all data and variables, `react-router-dom` will prevent the brower to fetch a new HTML file.
