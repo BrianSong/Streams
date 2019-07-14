@@ -12,7 +12,7 @@
 * The true nature of **react-router-dom** is to show and hide differernt sets of components based upon the URL.
 * We can use **semantic ui cdn** to handle the styling for our app.
 * If we want to add some always visible header, we should add it outside the <BrowerRouter> import from **react-router-dom**.
-  However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the <div></div> under the         <BrowerRouter>.
+  However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the div tag under the         <BrowerRouter>.
 * As for the authetication, I used **Google OAuth** which can not only capable of identifiation but can also make actions on behalf of     users.
 * **API** - Application programming Interface can thought as the waiters or messages among different software systems.
 * For OAuth, there are OAuth for severs -> actively access the users date for like each 10 mins and OAuth for JS Brower Apps which just   handle the login process.
@@ -60,10 +60,10 @@
   nested system and let modal window be a child of the body and assgin a very high z-index to it.
 * Use portal for modal window: ReactDOM.createPortal + document.querySelector(#(under the root in index.html))
 * EventHandler has a bubble up property, a e.stopPropagation() can be used to stop it.
-* We cannot allow to assign multiple JSX elements into a single variable, so we must use **<div></div>** to wrap them up.
+* We cannot allow to assign multiple JSX elements into a single variable, so we must use div tag to wrap them up.
 * We should use onClick = {()=>{some_call_back_func}} instead of onClick = {some_call_back_func}, because without the ()=> arrow 
   function, this callback function will be called automatically for the first time.
-* Use **<switch></switch>** to only show one Route at a time.
+* Use switch tag to only show one Route at a time.
 * To make the app works, we need all three (npm app + api + RTMP server) on.
 * **flv.js** wil make the video player inside our app.
 * By the set the setting(URL and STREAM-NAME) inside **OBS (open broadcaster software)**, we can pass the stream into the **RTMP**
