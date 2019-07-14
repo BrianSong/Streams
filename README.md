@@ -60,10 +60,10 @@
   nested system and let modal window be a child of the body and assgin a very high z-index to it.
 * Use portal for modal window: ReactDOM.createPortal + document.querySelector(#(under the root in index.html))
 * EventHandler has a bubble up property, a e.stopPropagation() can be used to stop it.
-* We cannot allow to assign multiple JSX elements into a single variable, so we must use <div></div> to wrap them up.
+* We cannot allow to assign multiple JSX elements into a single variable, so we must use **<div></div>** to wrap them up.
 * We should use onClick = {()=>{some_call_back_func}} instead of onClick = {some_call_back_func}, because without the ()=> arrow 
   function, this callback function will be called automatically for the first time.
-* Use <switch></switch> to only show one Route at a time.
+* Use **<switch></switch>** to only show one Route at a time.
 * To make the app works, we need all three (npm app + api + RTMP server) on.
 * **flv.js** wil make the video player inside our app.
 * By the set the setting(URL and STREAM-NAME) inside **OBS (open broadcaster software)**, we can pass the stream into the **RTMP**
