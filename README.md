@@ -55,7 +55,7 @@
 * formValues is all the form information inside Redux form, it can be automatically passed into the onSubmit callback function inside the   <form> in Redux form.
 * Since **PUT** request will update all properties, we use **PATCH** which updates only some properties instead.
 * **Modal window**: higher **z-index** means higher priority to be showed in the top of the screen. It is very hard for us to use modal 
-  window directly inside the normal react system because in that case, the modal window will be deeply nested inside all levels of         <div>, and it is very hard to set appropriate z-index for all of them for letting the modal window show on the toppest of the screen.
+  window directly inside the normal react system because in that case, the modal window will be deeply nested inside all levels of \<div>, and it is very hard to set appropriate z-index for all of them for letting the modal window show on the toppest of the screen.
   So, we use **portal** because it lets us to render some element not as a direct child, in this way, we can kind of break through the
   nested system and let modal window be a child of the body and assgin a very high z-index to it.
 * Use portal for modal window: ReactDOM.createPortal + document.querySelector(#(under the root in index.html))
