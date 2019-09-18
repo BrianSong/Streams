@@ -12,7 +12,7 @@
 * The true nature of **react-router-dom** is to show and hide different sets of components based upon the URL.
 * We can use **semantic ui cdn** to handle the styling for our app.
 * If we want to add some always visible header, we should add it outside the <BrowerRouter> import from **react-router-dom**.
-  However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the div tag under the         <BrowerRouter>.
+  However, if the header contains <link to = ""></link> import from **react-router-dom**, it must inside the div tag under the \<BrowerRouter>.
 * As for the authentication, I used **Google OAuth** which can not only capable of identification but can also take actions on behalf of users.
 * **API** - Application Programming Interface can be thought of as the waiters or messages among different software systems.
 * For OAuth, there are OAuth for severs -> actively access the users' data for like every 10 mins and OAuth for JS Brower Apps which just handle the login process.
