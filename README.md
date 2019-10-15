@@ -70,3 +70,4 @@
   server.
 * **componentWillUnmount()** will take care of the cleanup process: as long as we navigate away from the streamShow component, the flv
   player is destroyed by it.
+* **RTMP server will be in charge of recording the user's desktop together with OBS, it will connect to the JSON server so that the backend API will have a list of all available streams. The users inside the browser will first take a look at the list by sending a request to the JSON server, and when they click on some particular stream, the RTMP server will feed the stream to them.**
